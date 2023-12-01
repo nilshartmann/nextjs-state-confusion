@@ -72,7 +72,7 @@ export async function getBlogPost(postId: string): Promise<BlogPost | null> {
   const json = await r.json();
   const post = GetBlogPostResponse.parse(json).post;
   const bodyHtml = micromark(post.bodyMarkdown);
-  return { ...post, bodyHtml };
+  return { ...post, bodyHtml, body: "" };
 }
 
 // ---------------------------------------------------------------------------------------------------

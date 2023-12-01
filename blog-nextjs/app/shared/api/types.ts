@@ -67,6 +67,7 @@ export type RawBlogPost = z.infer<typeof RawBlogPost>;
 
 export const BlogPost = RawBlogPost.extend({
   bodyHtml: z.string(),
+  body: z.string(),
 });
 
 export type BlogPost = z.infer<typeof BlogPost>;

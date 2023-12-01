@@ -3,7 +3,8 @@ import { H1 } from "@/app/shared/components/Heading";
 import Post from "@/app/shared/blog/Post";
 import { Suspense } from "react";
 import LoadingIndicator from "@/app/shared/components/LoadingIndicator";
-import CommentList from "@/app/shared/blog/CommentList";
+import CommentList, { CommentBox } from "@/app/shared/blog/CommentList";
+import { addComment } from "@/app/blog/(content)/post/post-actions";
 
 type BlogPostPageProps = {
   postId: string;
@@ -24,6 +25,7 @@ export default async function BlogPostPage({ postId }: BlogPostPageProps) {
         fallback={<LoadingIndicator>Comments loading...</LoadingIndicator>}
       >
         <CommentList commentsPromise={commentsPromise} />
+        <CommentBox postId={post.id} />
       </Suspense>
     </div>
   );

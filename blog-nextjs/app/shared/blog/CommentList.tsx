@@ -1,6 +1,7 @@
 import { Comment } from "@/app/shared/api/types";
 import Card from "@/app/shared/components/Card";
 import { H2 } from "@/app/shared/components/Heading";
+import { addComment } from "@/app/blog/(content)/post/post-actions";
 
 type CommentListProps = {
   commentsPromise: Promise<Comment[] | null>;
@@ -25,5 +26,15 @@ export default async function CommentList({
         ))}
       </div>
     </Card>
+  );
+}
+
+export function CommentBox({ postId }: { postId: string }) {
+  return (
+    <form action={addComment}>
+      <input type="hidden" name="postId" value={postId} />
+      <input type="text" name="comment" />
+      <button type="submit">Add!</button>
+    </form>
   );
 }

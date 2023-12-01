@@ -5,7 +5,7 @@
   "scripts": {
     "backend": "cd ../backend && pnpm dev",
     "dev": "next dev",
-    "dev:clean": "rm -rf ./.next && pnpm dev",
+    "dev:clean": "rm -rf ./.next && pnpm dev -p 3080",
     "build": "rm -rf ./.next && next build",
     "start": "next start -p 3080",
     "lint": "next lint",

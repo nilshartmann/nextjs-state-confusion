@@ -2,6 +2,8 @@ import Card from "@/app/shared/components/Card";
 import { BlogPostTeaser } from "@/app/shared/api/types";
 import { dateTimeString } from "@/app/shared/components/date-formatter";
 import AppLink from "@/app/shared/components/AppLink";
+import { addComment } from "@/app/blog/(content)/post/post-actions";
+import NewestComment from "@/app/shared/blog/NewestComment";
 
 type PostPreviewProps = { post: BlogPostTeaser };
 export default function PostTeaser({ post }: PostPreviewProps) {
@@ -16,21 +18,5 @@ export default function PostTeaser({ post }: PostPreviewProps) {
         <NewestComment post={post} />
       </div>
     </Card>
-  );
-}
-
-type NewestCommentProps = {
-  post: BlogPostTeaser;
-};
-function NewestComment({ post }: NewestCommentProps) {
-  if (!post.newestComment) {
-    return null;
-  }
-
-  return (
-    <div>
-      <p className={"font-bold"}>Latest comment</p>
-      <p className={"italic"}>{post.newestComment.comment}</p>
-    </div>
   );
 }

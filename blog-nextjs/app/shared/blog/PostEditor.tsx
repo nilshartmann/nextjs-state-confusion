@@ -77,7 +77,7 @@ export default function PostEditor() {
               {title ? (
                 title.length < 5 ? (
                   <Message
-                    msg={`Please enter at lease ${
+                    msg={`Please enter at least ${
                       5 - title.length
                     } more characters`}
                   />
