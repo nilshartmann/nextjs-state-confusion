@@ -17,3 +17,6 @@ pnpm dev:clean
 - Enter a comment for the first blog post (`ADD YOUR COMMENT`), but do _not_ click on add
 - Click on `Order by Date desc`
 - Lists gets re-ordered. Note that your comment still is in 1st blog post in that list, and not associated with the blog post you had written your comment for. 😢
+- Comment-Input is implemented in `NewestComment` which is a client component
+  - `BlogListPage` (RSC) -> `PostTeaser` (RSC) -> `NewestComment` (Client)
+- Clicking on `Order by` requests a new `BlogListPage` by changing the query parameters (`OrderByButton` client component)
